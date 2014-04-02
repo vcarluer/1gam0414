@@ -111,11 +111,11 @@ Création NRJ gun
 |
 Vol NRJ gun
 |
-Réussis ou echec (+1 arme exile)
+[Réussis ou echec (+1 arme exile)]
 |
 Exile combat
 |
-Réussis ou Echec
+[Réussis ou Echec]
 |		|
 Découverte	En prison
 Base		|
@@ -139,6 +139,8 @@ Création de l'NRJ gun : temps avant présentation à la presse ?
 
 
 LETS GO
+Scene 0: Titre, fond sympa, langue en / fr, Choix du nom du héro, musique, son validation, affichage menu et séléction, input texte user
+
 Scene 1 : La finalisation de l'Energy Gun
 Lieu : laboratoire Londres
 Intro : Coupure presse : l'enfant prodigue ne veut pas être président
@@ -154,12 +156,14 @@ Pièces :
 1 Chassis
 Outro: Va annoncer à la pièce l'invention
 
-
-
-
-
-
-
-
-
-
+graphismes : Héro blouse ou pas, déplacement, prendre / utiliser, Laboratoire, coupures de presse intro, gun + 5 pièces + plan, coupure presse outro
+Sons: musique d'ambiance, son coupure presse, son assemblage
+Code: 
+Gestion des scènes
+Déplacement : dans une pièce, wall, a*
+Intéraction avec item
+Inventaire et crafting
+Système bilingue
+Dialogues craft et settings
+Information objet
+Temps limité ? 
