@@ -433,7 +433,11 @@ game = function (divId) {
 	game.prototype.init = function (divId) {
 		this.ui = {};
 		this.dom = {};
+		this.service = {};
 
+		var imagessources = {
+			coins: "coin-"
+		}
 		this.dom.mainDiv = document.getElementById(divId);
 		this.ui.scene1 = new game.scene1(this);
 	}
@@ -462,7 +466,7 @@ define("game", function(){});
 	};
 }());
 
-define("ui/scene1", function(){});
+define("scene/scene1", function(){});
 
  
 ;

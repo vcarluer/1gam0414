@@ -12,7 +12,7 @@ var rjsBase = 'src2';
 var almondjs = 'libs/almond';
 var almondInclude = 'app';
 var rjsShim = {
-	'app': ['ui/scene1'],
+	'app': ['scene/scene1'],
 	'ui/scene1': ['game']
 };
 var buildDir = 'html';
