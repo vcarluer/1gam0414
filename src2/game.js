@@ -40,6 +40,7 @@ Game = function (divId) {
 		// dom
 		this.dom.mainDivId = divId;
 		this.dom.mainDiv = document.getElementById(divId);
+		this.events = this.dom.mainDiv;
 
 		// resources
 		this.res.imagesSources = {
@@ -86,8 +87,8 @@ Game = function (divId) {
 	};
 
 	Game.prototype.resourceLoaded = function () {
-			this.scene.scene1.prepare();
-			this.service.updateService.loop();
+		this.scene.scene1.prepare();
+		this.service.updateService.loop();
 	};
 }());
 
