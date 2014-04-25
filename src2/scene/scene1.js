@@ -44,8 +44,18 @@
 			// this.game.res.sounds.music.play();
 		}
 
+		if (!this.tweenTest) {
+			this.tweenTest = true;
+			this.game.model.coin = {
+				x: 0
+			};
+
+			this.tweenCoin = createjs.Tween.get(this.game.model.coin, {loop:true}).to({x:200}, 2000).to({x:0}, 2000, createjs.Ease.elasticInOut);
+		}
+
+		this.tweenCoin.tick(delta);
 		this.game.ctx.clearRect(0, 0, this.game.dom.canvas.width, this.game.dom.canvas.height);
-		this.coinRenderer.render(delta);
+		this.coinRenderer.render(delta, this.game.model.coin.x);
 		this.game.ctx.font = "48px threedfont";
 		this.game.ctx.fillStyle = "red";
 		this.game.ctx.textBaseline = "top";

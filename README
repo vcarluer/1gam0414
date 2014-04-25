@@ -11,10 +11,11 @@ Main loop callback
 Canvas factory
 
 Missing tools:
-Text with fonts (hiero...), see direct canvas html 5
+OK Text with fonts (hiero...), see direct canvas html 5
+tweening lib
+
 Particle management
 tile map loader / renderer
-tweening lib
 
 Other:
 Custom dialog loader, to do during ld.

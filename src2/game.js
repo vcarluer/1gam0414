@@ -36,6 +36,7 @@ Game = function (divId) {
 		this.dom = {};
 		this.service = {};
 		this.res = {};
+		this.model = {};
 
 		// dom
 		this.dom.mainDivId = divId;
