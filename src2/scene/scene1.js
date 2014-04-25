@@ -41,10 +41,14 @@
 	Game.Scene.Scene1.prototype.update = function (delta) {
 		if (!this.musicPlay) {
 			this.musicPlay = true;
-			this.game.res.sounds.music.play();
+			// this.game.res.sounds.music.play();
 		}
 
 		this.game.ctx.clearRect(0, 0, this.game.dom.canvas.width, this.game.dom.canvas.height);
 		this.coinRenderer.render(delta);
+		this.game.ctx.font = "48px threedfont";
+		this.game.ctx.fillStyle = "red";
+		this.game.ctx.textBaseline = "top";
+		this.game.ctx.fillText("Ludum dare warmup", 0, 50);
 	};
 }());
