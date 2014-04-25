@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="gamersassociate.com ld29 warmup">
+    <serverData>
+      <paths name="gamersassociate.com ld29 warmup">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/ld29/warmup" local="$PROJECT_DIR$/src2" web="/ld29/warmup" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
+
