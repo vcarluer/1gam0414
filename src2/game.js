@@ -47,6 +47,9 @@ Game = function (divId) {
 		};
 
 		this.res.audioSources = {
+		};
+
+		this.res.audioSourcesLoop = {
 			music: "res/music.ogg"
 		};
 
@@ -71,8 +74,15 @@ Game = function (divId) {
 	Game.prototype.imagesLoaded = function () {
 		var self = this;
 		this.service.audioLoader.load(this.res.audioSources, function () {
-			self.resourceLoaded();
+			self.audioLoaded();
 		});
+	};
+
+	Game.prototype.audioLoaded = function () {
+		var self = this;
+		this.service.audioLoader.load(this.res.audioSourcesLoop, function () {
+			self.resourceLoaded();
+		}, true);
 	};
 
 	Game.prototype.resourceLoaded = function () {

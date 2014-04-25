@@ -22,9 +22,12 @@
 		this.game = game;
 	};
 
-	Game.Service.AudioLoader.prototype.load = function (soundSources, callback) {
+	Game.Service.AudioLoader.prototype.load = function (soundSources, callback, loop) {
 		var soundCount = 0, loaded = 0, src, sound;
-		this.game.res.sounds = [];
+		if (!this.game.res.sounds) {
+			this.game.res.sounds = [];
+		}
+
 		for (src in soundSources) {
 			soundCount++;
 		}
@@ -34,15 +37,19 @@
 				sound = document.createElement("audio");
 				sound.setAttribute("id", src);
 				sound.style.display = "none";
-				sound.onload = function () {
-					if (++loaded >= soundCount) {
-						callback();
-					}
-				};
-
 				sound.src = soundSources[src];
+				if (loop) {
+					sound.loop = true;
+				}
+
 				this.game.res.sounds[src] = sound;
+
+				if (++loaded >= soundCount) {
+					callback();
+				}
 			}
 		}
+
+		callback();
 	};
 }());
