@@ -18,11 +18,11 @@
  */
 (function() {
 	"use strict";
-	game.service.imageLoader = function (game) {
+		Game.Service.ImageLoader = function (game) {
 		this.game = game;
 	};
 
-	game.service.imageLoader.prototype.load = function (sources, callback) {
+	Game.Service.ImageLoader.prototype.load = function (sources, callback) {
 		var imageCount = 0, loaded = 0;
 
 		this.game.res.images = [];
@@ -37,7 +37,7 @@
 				if (++loaded >= imageCount) {
 					callback();
 				}
-			}
+			};
 
 			this.game.res.images[src].src = sources[src];
 		}

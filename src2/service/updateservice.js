@@ -20,11 +20,11 @@
 (function() {
 	"use strict";
 
-	game.service.updateService = function (game) {
+	Game.Service.UpdateService = function (game) {
 		this.game = game;
 	};
 
-	game.service.updateService.prototype.loop = function () {
+	Game.Service.UpdateService.prototype.loop = function () {
 		var delta = 0, self = this, newReference;
 		this.getBrowserAnimationFrame()(function () {
 			self.loop();
@@ -43,7 +43,7 @@
 		}
 	};
 
-	game.service.updateService.prototype.getBrowserAnimationFrame = function () {
+	Game.Service.UpdateService.prototype.getBrowserAnimationFrame = function () {
 		return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
 			function (callback) {
 				window.setTimeout(callback, 1000 / 60);

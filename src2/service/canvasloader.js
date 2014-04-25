@@ -18,11 +18,11 @@
  */
 (function () {
 	"use strict";
-	game.service.canvasLoader = function (game) {
+	Game.Service.CanvasLoader = function (game) {
 		this.game = game;
 	};
 
-	game.service.canvasLoader.prototype.createCanvas = function () {
+	Game.Service.CanvasLoader.prototype.createCanvas = function () {
 		var canvas = document.createElement("canvas");
 		canvas.setAttribute("id", this.game.dom.mainDivId + "canvas");
 		canvas.width = 800;

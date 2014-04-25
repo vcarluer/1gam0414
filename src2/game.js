@@ -1,14 +1,14 @@
-game = function (divId) {
+Game = function (divId) {
 	this.init(divId);
 };
 
 (function () {
 	"use strict";
-	game.service = function(){};
-	game.scene = function(){};
-	game.renderer = function () {};
+	Game.Service = function(){};
+	Game.Scene = function(){};
+	Game.Renderer = function () {};
 
-	game.prototype.init = function (divId) {
+	Game.prototype.init = function (divId) {
 		this.scene = {};
 		this.dom = {};
 		this.service = {};
@@ -25,15 +25,15 @@ game = function (divId) {
 		};
 
 		// Services
-		this.service.imageLoader = new game.service.imageLoader(this);
-		this.service.updateService = new game.service.updateService(this);
-		this.service.canvasLoader = new game.service.canvasLoader(this);
+		this.service.imageLoader = new Game.Service.ImageLoader(this);
+		this.service.updateService = new Game.Service.UpdateService(this);
+		this.service.canvasLoader = new Game.Service.CanvasLoader(this);
 
 		// scene
-		this.scene.scene1 = new game.scene.scene1(this);
-	}
+		this.scene.scene1 = new Game.Scene.Scene1(this);
+	};
 
-	game.prototype.run = function () {
+	Game.prototype.run = function () {
 		var self = this;
 		this.service.canvasLoader.createCanvas();
 		this.service.imageLoader.load(this.res.imagesSources, function () {
@@ -41,7 +41,7 @@ game = function (divId) {
 		});
 	};
 
-	game.prototype.resourceLoaded = function () {
+	Game.prototype.resourceLoaded = function () {
 			this.scene.scene1.prepare();
 			this.service.updateService.loop();
 	};

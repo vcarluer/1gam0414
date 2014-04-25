@@ -1,5 +1,5 @@
 "use strict";
 window.onload = function () {
-	var mygame = new game("gameDiv");
+	var mygame = new Game("gameDiv");
 	mygame.run();
-}
+};
