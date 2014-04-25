@@ -23,8 +23,10 @@ EventFactory = function () {};
 (function () {
 	"use strict";
 
-
 	// Unified method to create events on all browsers
+	// To use with:
+	// this.game.event.addEventListener(name, callback);
+	// this.game.events.dispatchEvent(evt);
 	EventFactory.create = function (name, params) {
 		var evt = document.createEvent('CustomEvent');
 		evt.initCustomEvent(name, true, true, params);
