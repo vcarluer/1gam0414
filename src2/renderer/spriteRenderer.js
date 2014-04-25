@@ -18,7 +18,7 @@
  */
 (function () {
 	"use strict";
-	game.renderer.spriteRenderer = function (options) {
+	Game.Renderer.SpriteRenderer = function (options) {
 		this.game = options.game;
 		this.image = options.image;
 		this.count = options.count;
@@ -32,7 +32,7 @@
 		this.spriteH = this.image.height;
 	};
 
-	game.renderer.spriteRenderer.prototype.render = function (delta, dx, dy, dw, dh) {
+	Game.Renderer.SpriteRenderer.prototype.render = function (delta, dx, dy, dw, dh) {
 		var x = dx, y = dy, width = dw, height = dh;
 		if (!x) {
 			x = 0;
