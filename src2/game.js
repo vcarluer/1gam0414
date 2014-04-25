@@ -46,8 +46,13 @@ Game = function (divId) {
 			coins: "res/coin-sprite-animation-sprite-sheet.png"
 		};
 
+		this.res.audioSources = {
+			music: "res/music.ogg"
+		};
+
 		// Services
 		this.service.imageLoader = new Game.Service.ImageLoader(this);
+		this.service.audioLoader = new Game.Service.AudioLoader(this);
 		this.service.updateService = new Game.Service.UpdateService(this);
 		this.service.canvasLoader = new Game.Service.CanvasLoader(this);
 
@@ -59,6 +64,13 @@ Game = function (divId) {
 		var self = this;
 		this.service.canvasLoader.createCanvas();
 		this.service.imageLoader.load(this.res.imagesSources, function () {
+			self.imagesLoaded();
+		});
+	};
+
+	Game.prototype.imagesLoaded = function () {
+		var self = this;
+		this.service.audioLoader.load(this.res.audioSources, function () {
 			self.resourceLoaded();
 		});
 	};

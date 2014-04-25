@@ -18,7 +18,7 @@
  */
 (function() {
 	"use strict";
-		Game.Service.ImageLoader = function (game) {
+	Game.Service.ImageLoader = function (game) {
 		this.game = game;
 	};
 

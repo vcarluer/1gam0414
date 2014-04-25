@@ -16,35 +16,33 @@
  You should have received a copy of the GNU General Public License
  along with 1gam0414.  If not, see <http://www.gnu.org/licenses/>.
  */
-(function() {
+(function () {
 	"use strict";
-	Game.Scene.Scene1 = function (game) {
-		this.init(game);
-	};
-
-	Game.Scene.Scene1.prototype.init = function (game) {
-		this.id = "Scene1";
+	Game.Service.AudioLoader = function (game) {
 		this.game = game;
 	};
 
-	Game.Scene.Scene1.prototype.prepare = function () {
-		this.game.currentScene = this;
-		this.coinRenderer = new Game.Renderer.SpriteRenderer({
-			game: this.game,
-			image: this.game.res.images.coins,
-			count: 10,
-			tickDelta: 100,
-			loop: true
-		});
-	};
-
-	Game.Scene.Scene1.prototype.render = function (delta) {
-		if (!this.musicPlay) {
-			this.musicPlay = true;
-			this.game.res.sounds.music.play();
+	Game.Service.AudioLoader.prototype.load = function (soundSources, callback) {
+		var soundCount = 0, loaded = 0, src, sound;
+		this.game.res.sounds = [];
+		for (src in soundSources) {
+			soundCount++;
 		}
 
-		this.game.ctx.clearRect(0, 0, this.game.dom.canvas.width, this.game.dom.canvas.height);
-		this.coinRenderer.render(delta);
+		for (src in soundSources) {
+			if (soundSources.hasOwnProperty(src)) {
+				sound = document.createElement("audio");
+				sound.setAttribute("id", src);
+				sound.style.display = "none";
+				sound.onload = function () {
+					if (++loaded >= soundCount) {
+						callback();
+					}
+				};
+
+				sound.src = soundSources[src];
+				this.game.res.sounds[src] = sound;
+			}
+		}
 	};
 }());
