@@ -13,7 +13,6 @@ Game = function (divId) {
 		this.dom = {};
 		this.service = {};
 		this.res = {};
-		this.renderer = {};
 
 		// dom
 		this.dom.mainDivId = divId;

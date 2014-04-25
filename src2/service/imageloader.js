@@ -23,23 +23,25 @@
 	};
 
 	Game.Service.ImageLoader.prototype.load = function (sources, callback) {
-		var imageCount = 0, loaded = 0;
+		var imageCount = 0, loaded = 0, src;
 
 		this.game.res.images = [];
 
-		for (var src in sources) {
+		for (src in sources) {
 			imageCount++;
 		}
 
-		for (var src in sources) {
-			this.game.res.images[src] = new Image();
-			this.game.res.images[src].onload = function () {
-				if (++loaded >= imageCount) {
-					callback();
-				}
-			};
+		for (src in sources) {
+			if (sources.hasOwnProperty(src)) {
+				this.game.res.images[src] = new Image();
+				this.game.res.images[src].onload = function () {
+					if (++loaded >= imageCount) {
+						callback();
+					}
+				};
 
-			this.game.res.images[src].src = sources[src];
+				this.game.res.images[src].src = sources[src];
+			}
 		}
 	};
 }());
