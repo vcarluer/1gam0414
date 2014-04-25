@@ -38,7 +38,7 @@
 		}
 
 		if (this.game.currentScene) {
-			this.game.currentScene.render(delta);
+			this.game.currentScene.update(delta);
 		}
 	};
 

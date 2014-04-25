@@ -38,7 +38,7 @@
 		});
 	};
 
-	Game.Scene.Scene1.prototype.render = function (delta) {
+	Game.Scene.Scene1.prototype.update = function (delta) {
 		if (!this.musicPlay) {
 			this.musicPlay = true;
 			this.game.res.sounds.music.play();
