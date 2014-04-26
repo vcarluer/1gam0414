@@ -12,11 +12,11 @@ Canvas factory
 
 Missing tools:
 OK Text with fonts (hiero...), see direct canvas html 5
-tweening lib
+OK tweening lib
 
-Particle management
-tile map loader / renderer
+HARD Particle management
+OK json export - tile map loader / renderer
 
 Other:
 Custom dialog loader, to do during ld.
-Transliation struct
+Translation system

@@ -36,6 +36,10 @@
 			tickDelta: 100,
 			loop: true
 		});
+
+		this.map = map3;
+		var tileId = TmxReader.GetTileId(this.map, 0, 5, 99);
+		var coord = TmxReader.GetTileCoord(this.map, this.game.res.images.map3, tileId);
 	};
 
 	Game.Scene.Scene1.prototype.update = function (delta) {

@@ -45,7 +45,8 @@ Game = function (divId) {
 
 		// resources
 		this.res.imagesSources = {
-			coins: "res/coin-sprite-animation-sprite-sheet.png"
+			coins: "res/coin-sprite-animation-sprite-sheet.png",
+			map3: "res/map3.png"
 		};
 
 		this.res.audioSources = {
