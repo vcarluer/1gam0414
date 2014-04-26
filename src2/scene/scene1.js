@@ -39,7 +39,7 @@
 
 		this.map = map3;
 		var tileId = TmxReader.GetTileId(this.map, 0, 5, 99);
-		var coord = TmxReader.GetTileCoord(this.map, this.game.res.images.map3, tileId);
+		this.tilecoord = TmxReader.GetTileCoord(this.map, tileId);
 	};
 
 	Game.Scene.Scene1.prototype.update = function (delta) {
@@ -59,6 +59,7 @@
 
 		this.tweenCoin.tick(delta);
 		this.game.ctx.clearRect(0, 0, this.game.dom.canvas.width, this.game.dom.canvas.height);
+		this.game.ctx.drawImage(this.game.res.images.map3, this.tilecoord.x, this.tilecoord.y, this.map.tilewidth, this.map.tileheight, 0, 0, this.map.tilewidth, this.map.tileheight);
 		this.coinRenderer.render(delta, this.game.model.coin.x);
 		this.game.ctx.font = "48px threedfont";
 		this.game.ctx.fillStyle = "red";

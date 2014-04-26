@@ -28,11 +28,11 @@ TmxReader = function () {};
 		return data;
 	};
 
-	TmxReader.GetTileCoord = function (map, image, tileId) {
+	TmxReader.GetTileCoord = function (map, tileId) {
 		// no margin or padding
 		var id = tileId - 1,
-			cols = image.width / map.tilewidth,
-			rows = image.height / map.tileheight,
+			cols = map.tilesets[0].imagewidth / map.tilewidth,
+			rows = map.tilesets[0].imageheight / map.tileheight,
 			yOff = Math.floor(id / cols),
 			xOff = id - (yOff * cols);
 
