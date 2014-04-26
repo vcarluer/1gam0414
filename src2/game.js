@@ -37,6 +37,9 @@ Game = function (divId) {
 		this.service = {};
 		this.res = {};
 		this.model = {};
+		this.options = {
+			lang: "en"
+		};
 
 		// dom
 		this.dom.mainDivId = divId;
@@ -61,6 +64,8 @@ Game = function (divId) {
 		this.service.audioLoader = new Game.Service.AudioLoader(this);
 		this.service.updateService = new Game.Service.UpdateService(this);
 		this.service.canvasLoader = new Game.Service.CanvasLoader(this);
+		this.service.translationService = new Game.Service.TranslationService(this);
+		this.t = this.service.translationService;
 
 		// scene
 		this.scene.scene1 = new Game.Scene.Scene1(this);

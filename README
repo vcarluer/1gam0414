@@ -14,9 +14,11 @@ Missing tools:
 OK Text with fonts (hiero...), see direct canvas html 5
 OK tweening lib
 
-HARD Particle management
 OK json export - tile map loader / renderer
 
+HARD Particle management
+
 Other:
+OK simple - Translation system
+
 Custom dialog loader, to do during ld.
-Translation system

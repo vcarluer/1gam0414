@@ -63,6 +63,6 @@
 		this.game.ctx.font = "48px threedfont";
 		this.game.ctx.fillStyle = "red";
 		this.game.ctx.textBaseline = "top";
-		this.game.ctx.fillText("Ludum dare warmup", 0, 50);
+		this.game.ctx.fillText(this.game.t.getText("warmup"), 0, 50);
 	};
 }());
