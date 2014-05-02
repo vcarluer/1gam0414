@@ -1,0 +1,10 @@
+var translations = {
+	"warmup": {
+		"fr": {
+			data: "Entrainement Ludum Dare"
+		},
+		"en": {
+			data: "Ludum Dare warmup"
+		}
+	}
+};

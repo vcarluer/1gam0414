@@ -1,3 +1,24 @@
 Repository for one game a month april 2014
 Game by @vcarluer
 Theme: Water
+
+Transformed as warmup for ludum dare 29
+Tools:
+Image loader
+Audio loader
+Event factory
+Main loop callback
+Canvas factory
+
+Missing tools:
+OK Text with fonts (hiero...), see direct canvas html 5
+OK tweening lib
+
+OK json export - tile map loader / renderer
+
+HARD Particle management
+
+Other:
+OK simple - Translation system
+
+Custom dialog loader, to do during ld.
