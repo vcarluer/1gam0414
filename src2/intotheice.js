@@ -23,7 +23,8 @@ window.onload = function () {
 	var fuckoff = {
 		title: "fuck off",
 		text: "Don't talk to a poor computer like this",
-		choices: []
+		choices: [],
+        image: "ngci.png"
 	}
 
 	texts[fuckoff.title] = fuckoff;
@@ -38,6 +39,12 @@ function showText(elem) {
 			textDiv.removeChild(textDiv.firstChild);
 		}
 
+        if (elem.image && elem.image.length > 0) {
+            var img = document.createElement("img");
+            img.setAttribute("src", elem.image);
+            textDiv.appendChild(img);
+        }
+
 		if (elem.text) {
 			var text = document.createElement("p");
 			text.innerHTML = elem.text;
@@ -49,7 +56,6 @@ function showText(elem) {
 				addChoice(elem.choices[i]);
 			}
 		}
-
 	}	
 }
 
