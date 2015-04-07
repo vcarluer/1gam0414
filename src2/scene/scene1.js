@@ -45,7 +45,7 @@
 	Game.Scene.Scene1.prototype.update = function (delta) {
 		if (!this.musicPlay) {
 			this.musicPlay = true;
-			// this.game.res.sounds.music.play();
+			this.game.res.sounds.music.play();
 		}
 
 		if (!this.tweenTest) {
